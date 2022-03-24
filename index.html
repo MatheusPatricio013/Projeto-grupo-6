@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+    <img id='logo' src="logoblack.png">
     <h1>Calculadora Financeira</h1>
 
    <!-- <p> Este programa tem a finalidade de informar o usuário sobre a perda de lucro em casos de falhas
@@ -25,22 +25,21 @@
 
             A class input_from é padrao nos inputs do form para a manipulação css
         -->
-
-    <form id="form">
-
-        <label for="input_lucro_medio_maquina" class="label_form" > Lucro médio por máquina:</label> <input class="input_form" id="input_lucro_medio_maquina" placeholder="Exemplo: 5000"><br>
-        <label for="input_total_maquinas" class="label_form">Total de máquinas:</label> <input class="input_form"id="input_total_maquinas" placeholder="Exemplo: 20"><br>
-        <label for="input_maquinas_off" class="label_form">Máquinas em manutenção:</label> <input class="input_form"id="input_maquinas_off" placeholder="Exemplo: 2"><br>
-        <label for="input_horas_off" class="label_form">Horas totais em manutenção:</label> <input class="input_form"id="input_horas_off" placeholder="Exemplo: 16" minlength="1" maxlength="24"><br>
-        <label for="input_dias_parado" class="label_form">Dias parados:</label> <input class="input_form" id="input_dias_parado" placeholder="Exemplo: 2 Dias"><br>
-
+    <div id="formulario">
+        <form class="box_form">
+        <label for="input_lucro_medio_maquina" class="label_form" > Lucro médio por máquina:</label><br>
+        <input class="input_form" id="input_lucro_medio_maquina" placeholder="Exemplo: 5000"><br>
+        <label for="input_total_maquinas" class="label_form">Total de máquinas:</label><br>
+        <input class="input_form"id="input_total_maquinas" placeholder="Exemplo: 20"><br>
+        <label for="input_maquinas_off" class="label_form">Máquinas em manutenção:</label><br>
+        <input class="input_form"id="input_maquinas_off" placeholder="Exemplo: 2"><br>
+        <label for="input_horas_off" class="label_form">Horas totais em manutenção:</label><br>
+        <input class="input_form"id="input_horas_off" placeholder="Exemplo: 16"><br><br>
+        <input class="input_submit" type="button" onclick="calcula_perda()" value="Calcular Valor"></input>
     </form>
-
-    <input class="input_submit" type="submit" onclick="calcula_perda()" value="Calcular Valor"></input>
-
-
-
+    </div>
     <div id="mensagem"></div>
+
 </body>
 <script src="script.js"></script>
 </html>
