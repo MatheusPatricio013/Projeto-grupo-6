@@ -19,7 +19,7 @@ function calcula_perda() {
         error_lucro_medio.innerHTML = '*Campo vazio'
         document.getElementById("input_lucro_medio_maquina").focus()
         document.getElementById("input_lucro_medio_maquina").errorMsg
-            
+
     }
     else{
         error_lucro_medio.innerHTML = ''
