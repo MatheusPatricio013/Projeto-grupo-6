@@ -8,28 +8,53 @@ function calcula_perda() {
     var perda_total = lucro_medio_maquina * maquinas_off * horas_off;
 
     var porcentagem_perda = (perda_total * 100) / lucro_total;
+    const errorMsg = document.querySelector('.input_form').style.boxShadow = "0 0 3px  #CC0000";
+    const validMsg= document.querySelector('.input_form').style.boxShadow = "0 0 3px green";
 
    if (maquinas_off > total_maquinas ){
-       return mensagem.innerHTML='Digite um total de máquinas válido'
+      mensagem.innerHTML='Digite um total de máquinas válido'
    }
 
     if(lucro_medio_maquina == ''){
-        return mensagem.innerHTML='Digite o lucro médio'
-        input_lucro_medio_maquina.style.borderColor = 'red'
+        error_lucro_medio.innerHTML = '*Campo vazio'
+        document.getElementById("input_lucro_medio_maquina").focus()
+        document.getElementById("input_lucro_medio_maquina").errorMsg
+            
     }
-    else if(total_maquinas == ''){ 
-        return mensagem.innerHTML='Digite o total de máquinas'
-        input_total_maquinas.style.borderColor = 'red'
+    else{
+        error_lucro_medio.innerHTML = ''
+        document.getElementById("input_lucro_medio_maquina").validMsg
     }
-    else if (maquinas_off == ''){
-        return mensagem.innerHTML='Digite o total de máquinas em manutenção'
-        input_maquinas_off.style.borderColor = 'red'
+     if(total_maquinas == ''){ 
+        error_total_maq.innerHTML = '*Campo vazio'
+         document.getElementById("input_total_maquinas").focus()
+          document.getElementById("input_total_maquinas").errorMsg
+          
     }
-    else if(horas_off == ''){
-        return mensagem.innerHTML = 'Digite as horas em manutenção'
-        input_horas_off.style.borderColor='red'
+    else{
+        error_total_maq.innerHTML = ''
+        document.getElementById("input_total_maquinas").validMsg
     }
-    else{ 
+     if (maquinas_off == ''){
+        error_maq_off.innerHTML=`*Campo vazio`
+        document.getElementById("input_maquinas_off").focus()
+        document.getElementById("input_maquinas_off").errorMsg
+        
+    }
+    else{
+        error_maq_off.innerHTML=``
+        document.getElementById("input_maquinas_off").validMsg
+    }
+     if(horas_off == ''){
+        error_hr_off.innerHTML=`*Campo vazio `
+        document.getElementById("input_horas_off").focus()
+       document.getElementById("input_horas_off").errorMsg
+    }
+    else{
+        error_hr_off.innerHTML=``
+        document.getElementById("input_horas_off").validMsg
+    }
+    if(lucro_medio_maquina != '' && total_maquinas != '' && maquinas_off != '' && maquinas_off < total_maquinas && horas_off != ''){
         mensagem.innerHTML = `O valor perdido será de ${perda_total.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})},
         equivalente a ${porcentagem_perda.toFixed(1)}
         % <br>da renda da indústria durante as horas em manutenção.`
