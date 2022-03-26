@@ -79,7 +79,7 @@ input {
 
 #mensagem {
     margin-top: 3%;
-    margin-left: 33%;
+    margin-left: 25%;
     font-size: 30px;
 }
 #logo{
@@ -114,38 +114,23 @@ input {
     justify-content: space-between;
     float: left;
     margin-top: 2%;
-    align-items: center;
+    margin-left: 0px;
+    
 }
 
 .div_inputs{
     width: 50%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 2%;
-    align-items: flex-start;
-    float:left
+    float: left;
+    margin-top: 25px;
+    display:grid;
+    justify-content:space-around ;
 }
 
-/*
-.div_span{
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction:column;
-    justify-content: space-between;
-    margin-top: 1%;
-    align-items: flex-start;
-    font-size: 16px;
-    color: red;
-    background-color: red;
-    
-}*/
-
 span {
-    color: red;
+    color: rgba(129, 11, 11, 0);
     font-size: 12px;
+    
 }
 .label_form{
     font-size: 25px;

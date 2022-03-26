@@ -39,17 +39,17 @@
                     <label for="input_horas_off" class="label_form">Horas totais em manutenção:</label><br>
                 </div>
                 <div class="div_inputs">
-                    <span id="error_lucro_medio"></span>
-                    <input  class="input_form" id="input_lucro_medio_maquina" placeholder="Exemplo: 5000">
+                    <span id="error_lucro_medio">*Campo vazio </span>
+                    <input  class="input_form" id="input_lucro_medio_maquina" required type="number" placeholder="Exemplo: 5000">
                     <br> 
-                    <span id="error_total_maq"></span>
-                    <input  class="input_form" id="input_total_maquinas" placeholder="Exemplo: 20">
+                    <span id="error_total_maq">*Campo vazio </span>
+                    <input  class="input_form" id="input_total_maquinas" required type="number" placeholder="Exemplo: 20">
                     <br>
-                    <span id="error_maq_off"></span>
-                    <input  class="input_form" id="input_maquinas_off" placeholder="Exemplo: 2">
+                    <span id="error_maq_off">*Campo vazio </span>
+                    <input  class="input_form" id="input_maquinas_off" required type="number" placeholder="Exemplo: 2">
                     <br>
-                    <span id="error_hr_off"></span>
-                    <input  class="input_form" id="input_horas_off" placeholder="Exemplo: 16">
+                    <span id="error_hr_off">*Campo vazio </span>
+                    <input  class="input_form" id="input_horas_off" required type="number" placeholder="Exemplo: 16">
                     <br>
                     <input  class="input_submit" type="button" onclick="calcula_perda()" value="Calcular Valor"></input>
                 </div>

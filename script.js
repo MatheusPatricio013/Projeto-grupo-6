@@ -8,55 +8,46 @@ function calcula_perda() {
     var perda_total = lucro_medio_maquina * maquinas_off * horas_off;
 
     var porcentagem_perda = (perda_total * 100) / lucro_total;
-    const errorMsg = document.querySelector('.input_form').style.boxShadow = "0 0 3px  #CC0000";
-    const validMsg= document.querySelector('.input_form').style.boxShadow = "0 0 3px green";
 
-   if (maquinas_off > total_maquinas ){
-      mensagem.innerHTML='Digite um total de máquinas válido'
-   }
-
-    if(lucro_medio_maquina == ''){
-        error_lucro_medio.innerHTML = '*Campo vazio'
-        document.getElementById("input_lucro_medio_maquina").focus()
-        document.getElementById("input_lucro_medio_maquina").errorMsg
-
-    }
-    else{
-        error_lucro_medio.innerHTML = ''
-        document.getElementById("input_lucro_medio_maquina").validMsg
-    }
-     if(total_maquinas == ''){ 
-        error_total_maq.innerHTML = '*Campo vazio'
-         document.getElementById("input_total_maquinas").focus()
-          document.getElementById("input_total_maquinas").errorMsg
-          
-    }
-    else{
-        error_total_maq.innerHTML = ''
-        document.getElementById("input_total_maquinas").validMsg
-    }
-     if (maquinas_off == ''){
-        error_maq_off.innerHTML=`*Campo vazio`
-        document.getElementById("input_maquinas_off").focus()
-        document.getElementById("input_maquinas_off").errorMsg
+    if (maquinas_off > total_maquinas) {
+        mensagem.style.marginLeft='30%'
+       mensagem.innerHTML='Você tem mais máquinas quebradas<br> do que máquinas totais.'
         
     }
-    else{
-        error_maq_off.innerHTML=``
-        document.getElementById("input_maquinas_off").validMsg
+    if (document.getElementById("input_lucro_medio_maquina").value == '') {
+        document.getElementById("error_lucro_medio").style.color = 'red'
+        document.getElementById("input_lucro_medio_maquina").focus()
     }
-     if(horas_off == ''){
-        error_hr_off.innerHTML=`*Campo vazio `
+    else {
+        document.getElementById("error_lucro_medio").style.color = 'rgba(129, 11, 11, 0)'
+    }
+    if (document.getElementById("input_total_maquinas").value == '') {
+        document.getElementById("error_total_maq").style.color = 'red'
+        document.getElementById("input_total_maquinas").focus()
+    }
+    else {
+        document.getElementById("error_total_maq").style.color = 'rgba(129, 11, 11, 0)'
+    }
+    if (document.getElementById("input_maquinas_off").value == '') {
+        document.getElementById("error_maq_off").style.color = 'red'
+        document.getElementById("input_maquinas_off").focus()
+    }
+    else {
+        document.getElementById("error_maq_off").style.color = 'rgba(129, 11, 11, 0)'
+    }
+
+    if (document.getElementById("input_horas_off").value == '') {
+        document.getElementById("error_hr_off").style.color = 'red'
         document.getElementById("input_horas_off").focus()
-       document.getElementById("input_horas_off").errorMsg
     }
-    else{
-        error_hr_off.innerHTML=``
-        document.getElementById("input_horas_off").validMsg
+    else {
+        document.getElementById("error_hr_off").style.color = 'rgba(129, 11, 11, 0)'
     }
-    if(lucro_medio_maquina != '' && total_maquinas != '' && maquinas_off != '' && maquinas_off < total_maquinas && horas_off != ''){
-        mensagem.innerHTML = `O valor perdido será de ${perda_total.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})},
-        equivalente a ${porcentagem_perda.toFixed(1)}
-        % <br>da renda da indústria durante as horas em manutenção.`
+
+    if (lucro_medio_maquina != '' && total_maquinas != '' && maquinas_off != '' && maquinas_off <= total_maquinas && horas_off != '') {
+        mensagem.innerHTML = `O valor perdido será de ${perda_total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })},
+     equivalente a ${porcentagem_perda.toFixed(1)}
+     % <br>da renda da indústria durante as horas em manutenção.`
     }
+
 }
